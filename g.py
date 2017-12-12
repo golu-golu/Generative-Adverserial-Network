@@ -3,7 +3,7 @@ def discriminator(images, reuse=False):
         tf.get_variable_scope().reuse_variables()
 
     weight1 = tf.get_variable('weight1', [5, 5, 1, 32], initializer=tf.truncated_normal_initializer(stddev=0.2))
-    bias1 = tf.get_variable( bias1', [32], initializer=tf.constant_initializer(0))
+    bias1 = tf.get_variable( bias1', [32], initializer=tf.constant_initializer(0)) 
     d1 = tf.nn.conv2d(input=images, filter=weight1, strides=[1, 1, 1, 1], padding='SAME')
     d1 = d1 +   bias1
     d1 = tf.nn.relu(d1)
